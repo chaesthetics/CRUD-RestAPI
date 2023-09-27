@@ -39,5 +39,8 @@ npm run test:unit
 ```sh
 npm run lint
 ```
+### Follow me on [Twitter](https://twitter.com/aurieljames11)
 
-#pogi ako hehe
+```sh
+https://twitter.com/aurieljames11
+```
