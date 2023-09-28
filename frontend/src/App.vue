@@ -3,15 +3,35 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <header>
+  <header class="">
     <div class="max-w-7xl mx-auto">
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+      <nav class="p-2">
+        <RouterLink to="/" class="
+          px-4
+          py-2 
+          mr-4 
+          bg-blue-700 
+          hover:bg-blue-800 
+          rounded 
+          text-white 
+          font-semibold
+          "
+         >Home</RouterLink>
+        <RouterLink to="/students" class="
+           px-4
+          py-2 
+          mr-4 
+          bg-blue-700 
+          hover:bg-blue-800 
+          rounded 
+          text-white 
+          font-semibold
+          "
+        >Students</RouterLink>
       </nav>
     </div>
   </header>
-  <main class="max-w-7xl mx-auto min-h-screen">
+  <main class="max-w-7xl mx-auto min-w-screen">
     <RouterView />
   </main>
 </template>
