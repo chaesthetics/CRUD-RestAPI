@@ -10,8 +10,8 @@ import { RouterLink, RouterView } from 'vue-router'
           px-4
           py-2 
           mr-4 
-          bg-blue-700 
-          hover:bg-blue-800 
+          bg-neutral-700 
+          hover:bg-neutral-800 
           rounded 
           text-white 
           font-semibold
@@ -21,8 +21,8 @@ import { RouterLink, RouterView } from 'vue-router'
            px-4
           py-2 
           mr-4 
-          bg-blue-700 
-          hover:bg-blue-800 
+          bg-neutral-700 
+          hover:bg-neutral-800 
           rounded 
           text-white 
           font-semibold
