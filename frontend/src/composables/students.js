@@ -22,7 +22,7 @@ export default function useStudents(){
     
     const storeStudent = async (data) =>{
         try{
-            console.log(data.response);
+            data.fullname = data.firstname + ' ' + data.lastname;
             await axios.post("students", data);
             await router.push({name: "StudentIndex"});
         }catch(error){
