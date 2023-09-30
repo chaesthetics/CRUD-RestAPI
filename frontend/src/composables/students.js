@@ -16,7 +16,7 @@ export default function useStudents(){
     }
 
     const getStudent = async (id) => {
-        const response = await axios.get("students"+ id);
+        const response = await axios.get("students/"+ id);
         student.value = response.data.data;
     }
     
@@ -33,17 +33,18 @@ export default function useStudents(){
 
     const updateStudent = async (id) =>{
         try{
+            //console.log(id);
             await axios.put("students/"+ id, student.value);
             await router.push({name: "StudentIndex"});
         }catch(error){
             if(error.response.status === 422){
-                error.value = error.response.data.errors;
+                errors.value = error.response.data.errors;
             }
         }
     }
 
-    const destroyStudent = async (id) =>{
-        if(!window.confirm("Are You Sure?")){
+    const destroyStudent = async (id, fullname) =>{
+        if(!window.confirm(`Are you sure you want to delete the data of ${fullname}`)){
             return;
         }
         try {
