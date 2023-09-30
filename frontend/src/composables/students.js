@@ -43,8 +43,8 @@ export default function useStudents(){
         }
     }
 
-    const destroyStudent = async (id) =>{
-        if(!window.confirm("Are You Sure?")){
+    const destroyStudent = async (id, fullname) =>{
+        if(!window.confirm(`Are you sure you want to delete the data of ${fullname}`)){
             return;
         }
         try {
