@@ -8,6 +8,9 @@
         firstname: "",
         lastname: "",
         course: "",
+        area: "",
+        city: "",
+        zip: ""
     });
 
 </script>
@@ -17,21 +20,24 @@
         <h1 class="flex font-bold text-lg pb-10">Student Registration Form</h1>
             <div class="flex flex-wrap -mx-3 mb-6">
                  <div class="w-full md:w-1/2 px-3">
-                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
-                    First Name
-                </label>
-                <input v-if="errors.fullname" v-model="form.firstname" class="appearance-none block w-full bg-gray-100 text-gray-700 border border-red-600 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Student firstname">
-                <input v-else v-model="form.firstname" class="appearance-none block w-full bg-gray-100 text-gray-700 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Student firstname">
-                    <div v-if="errors.fullname">
-                        <span class="text-red-600 font-semibold text-xs">{{ errors.fullname[0] }}</span>
+                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
+                        First Name
+                    </label>
+                    <input v-if="errors.firstname" v-model="form.firstname" class="appearance-none block w-full bg-gray-100 text-gray-700 border border-red-600 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Student firstname">
+                    <input v-else v-model="form.firstname" class="appearance-none block w-full bg-gray-100 text-gray-700 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Student firstname">
+                    <div v-if="errors.firstname">
+                        <span class="text-red-600 font-semibold text-xs">{{ errors.firstname[0] }}</span>
                     </div>
                 </div>
                 <div class="w-full md:w-1/2 px-3">
-                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
-                    Last Name
-                </label>
-                <input v-if="errors.fullname" v-model="form.lastname" class="border-red-600 appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Student lastname">
-                <input v-else v-model="form.lastname" class="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Student lastname">
+                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
+                        Last Name
+                    </label>
+                    <input v-if="errors.lastname" v-model="form.lastname" class="appearance-none block w-full bg-gray-100 text-gray-700 border border-red-600 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Student firstname">
+                    <input v-else v-model="form.lastname" class="appearance-none block w-full bg-gray-100 text-gray-700 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Student firstname">
+                    <div v-if="errors.lastname">
+                        <span class="text-red-600 font-semibold text-xs">{{ errors.lastname[0] }}</span>
+                    </div>
                 </div>
             </div>
             <div class="flex flex-wrap -mx-3 mb-6">
@@ -52,19 +58,31 @@
                 <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-city">
                     Area
                 </label>
-                <input class="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text" placeholder="Buendia">
+                <input v-if="errors.area" v-model="form.area" class="appearance-none block w-full bg-gray-100 text-gray-700 border border-red-600 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text" placeholder="Buendia">
+                <input v-else v-model="form.area" class="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text" placeholder="Buendia">
+                    <div v-if="errors.area">
+                        <span class="text-red-600 font-semibold text-xs">{{ errors.area[0] }}</span>
+                    </div>
                 </div>
                  <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
                 <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-city">
                     City
                 </label>
-                <input class="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text" placeholder="Makati">
+                <input v-if="errors.city" v-model="form.city" class="appearance-none block w-full bg-gray-100 text-gray-700 border border-red-600 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text" placeholder="Makati">
+                <input v-else v-model="form.city" class="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text" placeholder="Makati">
+                    <div v-if="errors.city">
+                        <span class="text-red-600 font-semibold text-xs">{{ errors.city[0] }}</span>
+                    </div>
                 </div>
                 <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
                 <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
                     Zip
                 </label>
-                <input class="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="text" placeholder="1200">
+                <input v-if="errors.zip" v-model="form.zip" class="appearance-none block w-full bg-gray-100 text-gray-700 border border-red-600 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="text" placeholder="1200">
+                <input v-else v-model="form.zip" class="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="text" placeholder="1200">
+                    <div v-if="errors.zip">
+                        <span class="text-red-600 font-semibold text-xs">{{ errors.zip[0] }}</span>
+                    </div>
                 </div>
             </div>
             <div class="flex flex-wrap">
