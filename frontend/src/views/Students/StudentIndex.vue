@@ -2,7 +2,7 @@
     import useStudents from '../../composables/students.js';
     import { onMounted } from "vue";
 
-    const { students, getStudents } = useStudents();
+    const { students, getStudents, destroyStudent } = useStudents();
     onMounted(()=>getStudents());
 
 </script>
@@ -41,8 +41,8 @@
                     {{ student.fullname }}
                 </td>
                 <td class="px-6 py-4">  
-                    <button class="px-2 pt-2 pb-2 pr-6 pl-6 bg-yellow-600 hover:text-white rounded-md hover:bg-yellow-700 text-white font-semibold">Edit</button>
-                    <button class="px-2 pt-2 pb-2 pr-6 pl-6 bg-red-600 hover:text-white rounded-md hover:bg-red-700 text-white font-semibold">Delete</button>
+                    <RouterLink :to="{ name: 'StudentEdit', params:{ id: student.id }}" class="px-2 pt-2 pb-2 pr-6 pl-6 bg-yellow-600 hover:text-white rounded-md hover:bg-yellow-700 text-white font-semibold">Edit</RouterLink>
+                    <button @click="destroyStudent(student.id, student.fullname)" class="px-2 pt-2 pb-2 pr-6 pl-6 bg-red-600 hover:text-white rounded-md hover:bg-red-700 text-white font-semibold">Delete</button>
                 </td>
             </tr>
         </tbody>
