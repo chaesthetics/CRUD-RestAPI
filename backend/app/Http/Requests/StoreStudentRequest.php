@@ -24,8 +24,13 @@ class StoreStudentRequest extends FormRequest
     public function rules()
     {
         return [
-            'fullname' => ['required', 'min:5', 'max:30', Rule::unique('students')->ignore($this->student)], 
+            // 'fullname' => ['required', 'min:3', 'max:30', Rule::unique('students')->ignore($this->student)], 
+            'firstname' => ['required', 'min:3', 'max:30'],
+            'lastname' => ['required', 'min:3', 'max:30'],
             'course' => ['required'],
+            'area' => ['required'],
+            'city' => ['required'],
+            'zip' => ['required'],
         ];
     }
 }

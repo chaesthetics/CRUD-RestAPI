@@ -16,13 +16,12 @@ export default function useStudents(){
     }
 
     const getStudent = async (id) => {
-        const response = await axios.get("students"+ id);
+        const response = await axios.get("students/"+ id);
         student.value = response.data.data;
     }
     
     const storeStudent = async (data) =>{
         try{
-            data.fullname = data.firstname + ' ' + data.lastname;
             await axios.post("students", data);
             await router.push({name: "StudentIndex"});
         }catch(error){
@@ -34,11 +33,12 @@ export default function useStudents(){
 
     const updateStudent = async (id) =>{
         try{
+            //console.log(id);
             await axios.put("students/"+ id, student.value);
             await router.push({name: "StudentIndex"});
         }catch(error){
             if(error.response.status === 422){
-                error.value = error.response.data.errors;
+                errors.value = error.response.data.errors;
             }
         }
     }
